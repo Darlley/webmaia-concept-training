@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  scroll-behavior: smooth;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  height: 100svh;
+  width: 100%;
+}
+
+.vertical-animation{
+  animation: toFromVertical 500ms ease forwards;
+}
+@keyframes toFromVertical{
+  0%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.vertical-animation-reverse{
+  animation: toFromVerticalReverse 500ms ease forwards;
+  transform: translateY(100);
+}
+@keyframes toFromVerticalReverse{
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.horizontal-animation{
+  animation: toFromHorizontal 500ms ease forwards;
+}
+.horizontal-animation-reverse{
+  animation: toFromHorizontal 500ms ease reverse forwards;
+}
+@keyframes toFromHorizontal{
+  0%{
+    transform: translateX(-100px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
